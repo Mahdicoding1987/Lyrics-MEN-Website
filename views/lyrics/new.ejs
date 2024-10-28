@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post your Lyrics</title>
+</head>
+<body>
+    <h1>Post your Lyrics Here</h1>
+
+    <form action="/lyrics" method="POST">
+
+        <label for="name">Name of Song:</label>
+        <input type="text" name="name" id="name" /><br><br>
+
+        <label for="artist">Artist:</label>
+        <input type="text" name="artist" id="artist"/><br><br>
+
+        <label for="lyrics">Lyrics:</label>
+        <textarea name="lyrics" id="lyrics"></textarea><br><br>
+
+        <label for="link">YouTube Link:</label>
+        <input type="text" name="link" id="link" /><br><br>
+
+        <button type="submit">Add Lyrics</button>
+        
+      </form>   
+</body>
+</html>

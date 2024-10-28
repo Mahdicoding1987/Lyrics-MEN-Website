@@ -7,9 +7,11 @@ const addUserToViews = require('./middleware/addUserToViews');
 require('dotenv').config();
 require('./config/database');
 
+
 // Controllers
 const authController = require('./controllers/auth');
 const isSignedIn = require('./middleware/isSignedIn');
+const lyricsController = require('./controllers/lyrics');
 
 const app = express();
 // Set the port from environment variable or default to 3000
@@ -41,19 +43,34 @@ app.get('/', async (req, res) => {
   res.render('index.ejs');
 });
 
+// app.get('/your-page', async (req, res) => {
+// app.get('/lyrics', async (req, res) => {
+//   res.render('lyrics-page.ejs');
+// });
+
+// app.get('/lyrics/new', async (req, res) => {
+//   res.render('new.ejs');
+// });
+
+// app.post('/lyrics', async (req, res) => {
+//   // await lyrics.create(req.body);
+//   res.redirect('/lyrics');
+// });
+
 app.use('/auth', authController);
 
 // Protected Routes
 app.use(isSignedIn);
 
-app.get('/protected', async (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome to the party ${req.session.user.username}.`);
-  } else {
-    res.sendStatus(404);
-    // res.send('Sorry, no guests allowed.');
-  }
-});
+app.use('/lyrics', lyricsController);
+// app.get('/protected', async (req, res) => {
+//   if (req.session.user) {
+//     res.send(`Welcome to the party ${req.session.user.username}.`);
+//   } else {
+//     res.sendStatus(404);
+//     // res.send('Sorry, no guests allowed.');
+//   }
+// });
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

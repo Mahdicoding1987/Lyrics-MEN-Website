@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit <%= lyric.name %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit the Lyric!</h1>
+
+    <form form action="/lyrics/<%= lyric._id %>?_method=PUT" method="POST">
+        
+        <label for="name">Name of Song:</label>
+        <input type="text" name="name" id="name" value="<%= lyric.name %>" /><br><br>
+
+        <label for="artist">Artist:</label>
+        <input type="text" name="artist" id="artist" value="<%= lyric.artist %>"/><br><br>
+
+        <label for="lyrics">Lyrics:</label>
+        <textarea name="lyrics" id="lyrics" rows="15" cols="50"><%= lyric.lyrics %></textarea><br><br>
+
+        <label for="link">YouTube Link:</label>
+        <input type="text" name="link" id="link" value="<%= lyric.link %>" size="50" /><br><br>
+
+        <button type="submit">Save</button>
+      </form>
+
+  </body>
+</html>

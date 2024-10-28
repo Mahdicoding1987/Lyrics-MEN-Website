@@ -1,0 +1,29 @@
+<!-- views/listings/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= lyric.name %></title>
+  </head>
+  <body>
+
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= lyric.name %></h1>
+
+    <p>Artist: <%= lyric.artist %></p>
+    <p>Posted by: <%= lyric.owner.username %></p>
+    <p><%= lyric.lyrics %></p>
+    <a href="<%= lyric.link %>">Litsen to the song</a>
+
+    <a href="<%= lyric._id %>/edit">Edit the Lyric</a>
+
+
+
+  <form action="/lyrics/<%=lyric._id%>?_method=DELETE" method="POST">
+      <button type="submit">Delete <%= lyric.name %></button>
+  </form>
+
+  </body>
+</html>
