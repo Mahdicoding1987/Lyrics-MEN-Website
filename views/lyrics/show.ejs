@@ -15,7 +15,8 @@
     <p>Artist: <%= lyric.artist %></p>
     <p>Posted by: <%= lyric.owner.username %></p>
     <p><%= lyric.lyrics %></p>
-    <a href="<%= lyric.link %>">Litsen to the song</a>
+
+    <iframe width="420" height="345" src="<%= lyric.link %>"></iframe>
 
     <a href="<%= lyric._id %>/edit">Edit the Lyric</a>
 
