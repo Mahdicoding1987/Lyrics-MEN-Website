@@ -3,18 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Home Page</title>
   </head>
   <body>
 
-    <%- include('./partials/_navbar.ejs') %>
+    
     <% if (user) { %>
+      <%- include('./partials/_navbar.ejs') %>
       <h1>Welcome to the Lyrics House, <%= user.username %>!</h1>
       <h2>The Place to find your favorite lyrics</h2>
-      <a href="/lyrics/new">Post A New Lyric</a>
       <% } else { %>
       <h1>Welcome to the Lyrics House</h1>
-      <h2>The Place to find your favorite lyrics</h2>
+      <h2>The Place to find your favorite lyrics, Please sign in to view the Lyrics</h2>
+    
+      <a href="/auth/sign-in">Sign in</a>
+      <a href="/auth/sign-up">Sign up</a>
       <% } %>
 
   </body>

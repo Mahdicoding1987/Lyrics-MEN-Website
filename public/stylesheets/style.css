@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DynaPuff:wght@400..700&display=swap');
+
+body {
+    background-image: linear-gradient(red, yellow, green);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    color: black;
+    font-family: 'DynaPuff', cursive;
+    font-size: 1.2rem;
+    text-align: center
+}
+
+.lyrics {
+    white-space: pre;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.iframe {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.video {
+    position: fixed;    
+    right: 70px;
+    
+}

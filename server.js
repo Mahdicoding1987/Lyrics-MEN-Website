@@ -6,6 +6,7 @@ const MongoStore = require('connect-mongo');
 const addUserToViews = require('./middleware/addUserToViews');
 require('dotenv').config();
 require('./config/database');
+const path = require('path')
 
 
 // Controllers
@@ -18,7 +19,7 @@ const app = express();
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 // MIDDLEWARE
-
+app.use(express.static(path.join(__dirname, 'public')));
 // Middleware to parse URL-encoded data from forms
 app.use(express.urlencoded({ extended: false }));
 // Middleware for using HTTP verbs such as PUT or DELETE

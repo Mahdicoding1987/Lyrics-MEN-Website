@@ -5,26 +5,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= lyric.name %></title>
   </head>
   <body>
 
-    <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_navbar2.ejs') %>
     <h1><%= lyric.name %></h1>
 
     <p>Artist: <%= lyric.artist %></p>
     <p>Posted by: <%= lyric.owner.username %></p>
-    <p><%= lyric.lyrics %></p>
+    
+    <div class= "iframe">
 
-    <iframe width="420" height="345" src="<%= lyric.link %>"></iframe>
+      <p class="lyrics"><%= lyric.lyrics %></p>
+
+      <div class="video">
+      <iframe  width="420" height="345" src="<%= lyric.link %>"></iframe>
+      </div>
+
+    </div>
 
     <a href="<%= lyric._id %>/edit">Edit the Lyric</a>
 
-
-
-  <form action="/lyrics/<%=lyric._id%>?_method=DELETE" method="POST">
-      <button type="submit">Delete <%= lyric.name %></button>
-  </form>
-
+    <form action="/lyrics/<%=lyric._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= lyric.name %></button>
+    </form>
+  
   </body>
 </html>
