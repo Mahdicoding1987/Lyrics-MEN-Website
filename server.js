@@ -7,6 +7,7 @@ const addUserToViews = require('./middleware/addUserToViews');
 require('dotenv').config();
 require('./config/database');
 const path = require('path')
+const User = require('./models/user')
 
 
 // Controllers
@@ -45,22 +46,9 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/account/:username', async (req, res) => {
-  res.render('account.ejs');
+  const accountUser = await User.findOne({username: req.params.username});
+  res.render('account.ejs', {username: accountUser.username, country: accountUser.country});
 });
-
-// app.get('/your-page', async (req, res) => {
-// app.get('/lyrics', async (req, res) => {
-//   res.render('lyrics-page.ejs');
-// });
-
-// app.get('/lyrics/new', async (req, res) => {
-//   res.render('new.ejs');
-// });
-
-// app.post('/lyrics', async (req, res) => {
-//   // await lyrics.create(req.body);
-//   res.redirect('/lyrics');
-// });
 
 app.use('/auth', authController);
 
@@ -68,16 +56,7 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 
 app.use('/lyrics', lyricsController);
-// app.get('/protected', async (req, res) => {
-//   if (req.session.user) {
-//     res.send(`Welcome to the party ${req.session.user.username}.`);
-//   } else {
-//     res.sendStatus(404);
-//     // res.send('Sorry, no guests allowed.');
-//   }
-// });
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
   console.log(`The express app is ready on port ${port}!`);
 });

@@ -15,6 +15,7 @@ router.post('/sign-up', async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const confirmPassword = req.body.confirmPassword;
+  const country = req.body.country;
   // Check if the user already exists
   const existingUser = await User.findOne({ username });
 
@@ -30,7 +31,7 @@ router.post('/sign-up', async (req, res) => {
   // create the user in the database
   // -b make the password secure
   const hashPassword = auth.encryptPassword(password);
-  const payload = { username, password: hashPassword };
+  const payload = { username, password: hashPassword, country };
 
   const newUser = await User.create(payload);
   // sign person in and redirect to home page

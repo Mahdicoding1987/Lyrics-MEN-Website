@@ -16,8 +16,8 @@
     <h1 class="title"><%= lyric.name %></h1>
 
     <p>Artist: <%= lyric.artist %></p>
-    <p>Posted by: <%= lyric.owner.username %></p>
-    
+    <p>Posted by: <a href="http://localhost:3000/account/<%= lyric.owner.username %>"><%= lyric.owner.username %></a></p>
+ 
     <div class= "iframe">
 
       <p class="lyrics"><%= lyric.lyrics %></p>

@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Document</title>
+    <title><%= username %>'s' Account</title>
 </head>
 <body>
-    <h1>this is your page <%= user.username %></h1>
+    <div class="topnav">
+        <%- include('./partials/_navbar.ejs') %>
+    </div>
+
+    <h1>User Name: <%= username %></h1>
+    <h1>Country: <%= country %></h1>
+
 </body>
 </html>
