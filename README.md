@@ -30,14 +30,29 @@ You can see the app by visiting: [here!](https://github.com/Mahdicoding1987/Lyri
 * CSS3: Styling the game and ensuring responsive design.
 * JavaScript (ES6): Game logic and interactivity.
 
-### Prerequisites
+## Prerequisites
 - A web browser (Google Chrome, Firefox, or Safari)
 
-### Strech Goals
+## Strech Goals
 
 * Add a search bar to search for songs.
 * Add a feature to save favorite songs.
 * Add a feature to share lyrics on social media.
 
-
-
+## Most Challenging Part
+```
+router.put('/:id', async (req, res) => {
+  try {
+    const currentLyric = await Lyrics.findById(req.params.id);
+    if (currentLyric.owner.equals(req.session.user._id)) {
+      await currentLyric.updateOne(req.body);
+      res.redirect(`/lyrics/${currentLyric._id}`);
+    } else {
+      res.redirect('/');
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+```
