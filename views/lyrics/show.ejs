@@ -28,11 +28,13 @@
 
     </div>
 
+    <% if (lyric.owner.username === user.username) { %>
     <button><a href="<%= lyric._id %>/edit">Edit the Lyrics</a></button>
 
     <form action="/lyrics/<%=lyric._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= lyric.name %></button>
     </form>
-  
+    <% } %>
+
   </body>
 </html>

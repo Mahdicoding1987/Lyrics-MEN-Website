@@ -20,7 +20,7 @@ router.get('/new', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
       const foundLyrics = await Lyrics.findById(req.params.id).populate('owner');
-      res.render('lyrics/show.ejs', { lyric: foundLyrics });
+      res.render('lyrics/show.ejs', { lyric: foundLyrics, username: req.user ? req.user.username : null });
     } catch (error) {
       console.log(error);
       res.redirect('/');
