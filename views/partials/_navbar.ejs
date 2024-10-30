@@ -3,6 +3,7 @@
     <% if (user) { %>
     <a href="/">Home Page</a>
     <a href="/lyrics">Lyrics List</a>
+    <a href="/account/<%= user.username %>">your account</a>
 
     <div class="signout">
     <a href="/auth/sign-out">Sign Out</a>

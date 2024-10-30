@@ -44,6 +44,10 @@ app.get('/', async (req, res) => {
   res.render('index.ejs');
 });
 
+app.get('/account/:username', async (req, res) => {
+  res.render('account.ejs');
+});
+
 // app.get('/your-page', async (req, res) => {
 // app.get('/lyrics', async (req, res) => {
 //   res.render('lyrics-page.ejs');
