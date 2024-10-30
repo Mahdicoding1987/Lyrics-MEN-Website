@@ -8,7 +8,7 @@ Lyrics House is a web application that allows users to search for song lyrics an
 
 You can see the app by visiting: [here!](https://github.com/Mahdicoding1987/Lyrics-MEN-Website.git)
 
-![alt image](Capture10.png)
+![alt image](Capture10.PNG)
 
 ## Features
 
