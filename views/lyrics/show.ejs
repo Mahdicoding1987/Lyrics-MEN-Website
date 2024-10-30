@@ -9,9 +9,11 @@
     <title><%= lyric.name %></title>
   </head>
   <body>
+    <div class="topnav">
+    <%- include('../partials/_navbar.ejs') %>
+    </div>
 
-    <%- include('../partials/_navbar2.ejs') %>
-    <h1><%= lyric.name %></h1>
+    <h1 class="title"><%= lyric.name %></h1>
 
     <p>Artist: <%= lyric.artist %></p>
     <p>Posted by: <%= lyric.owner.username %></p>
@@ -26,7 +28,7 @@
 
     </div>
 
-    <a href="<%= lyric._id %>/edit">Edit the Lyric</a>
+    <button><a href="<%= lyric._id %>/edit">Edit the Lyrics</a></button>
 
     <form action="/lyrics/<%=lyric._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= lyric.name %></button>

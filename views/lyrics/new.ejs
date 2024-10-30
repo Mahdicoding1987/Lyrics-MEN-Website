@@ -7,25 +7,31 @@
     <title>Post your Lyrics</title>
 </head>
 <body>
+    <div class="topnav">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Post your Lyrics Here</h1>
+    </div>
+    
+    <h1 class="title">Post your Lyrics Here</h1>
 
+<div class="new">
     <form action="/lyrics" method="POST">
 
-        <label for="name">Name of Song:</label>
+        <label for="name">Name of Song:</label><br>
         <input type="text" name="name" id="name" /><br><br>
 
-        <label for="artist">Artist:</label>
+        <label for="artist">Artist:</label><br>
         <input type="text" name="artist" id="artist"/><br><br>
 
-        <label for="lyrics">Lyrics:</label>
-        <textarea name="lyrics" id="lyrics"></textarea><br><br>
+        <label for="lyrics">Lyrics:</label><br>
+        <textarea name="lyrics" rows="20" cols= "50" id="lyrics"></textarea><br><br>
 
-        <label for="link">Embed YouTube Link:</label>
+        <label for="link">Embed YouTube Link:</label><br>
         <input type="text" name="link" id="link" placeholder="example https://www.youtube.com/embed/oRdxUFDoQe0" size="50"/><br><br>
 
         <button type="submit">Add Lyrics</button>
         
-      </form>   
+      </form> 
+</div>  
+
 </body>
 </html>

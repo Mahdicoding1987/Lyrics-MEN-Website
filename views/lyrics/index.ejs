@@ -7,19 +7,20 @@
     <title>Home Page</title>
   </head>
   <body>
-
+    <div class="topnav">
     <%- include('../partials/_navbar.ejs') %>
-      <h1>Lyrics List</h1>
+    </div>
+    
+      <h1 class="title">Lyrics List</h1>
       <a href="/lyrics/new">Post A New Lyric</a>
-      <div>
+
+      <ul>
         <% lyrics.forEach((lyric)=> { %>
-        <a href="/lyrics/<%= lyric._id %>">
-        <h1><%= lyric.name %></h1>
-        <h4>Artist: <%= lyric.artist %></h4>
-        <p>Posted by <%= lyric.owner.username %></p>
-        </a>
+        <li>
+          <a class="box" href="/lyrics/<%= lyric._id %>"><%= lyric.name %></a>
+        </li>
         <% }) %>
-      </div>
+      </ul>
 
       
 

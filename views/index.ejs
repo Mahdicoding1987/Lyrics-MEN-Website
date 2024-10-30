@@ -10,9 +10,15 @@
 
     
     <% if (user) { %>
+    <div class="topnav">
       <%- include('./partials/_navbar.ejs') %>
-      <h1>Welcome to the Lyrics House, <%= user.username %>!</h1>
-      <h2>The Place to find your favorite lyrics</h2>
+    </div>
+
+      <h1 class="title">Welcome to the Lyrics House, <%= user.username %>!</h1>
+      <h2 class="title">The Place to find your favorite lyrics</h2>
+
+      <a href="/lyrics">View all Lyrics</a>
+
       <% } else { %>
       <h1>Welcome to the Lyrics House</h1>
       <h2>The Place to find your favorite lyrics, Please sign in to view the Lyrics</h2>

@@ -3,7 +3,11 @@
     <% if (user) { %>
     <a href="/">Home Page</a>
     <a href="/lyrics">Lyrics List</a>
+
+    <div class="signout">
     <a href="/auth/sign-out">Sign Out</a>
+    </div>
+
     <% } else { %>
     <a href="/auth/sign-up">Sign Up</a>
     <a href="/auth/sign-in">Sign In</a>
