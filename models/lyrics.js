@@ -23,8 +23,6 @@ const lyricSchema = new mongoose.Schema({
     required: false,
   }
 });
-//   user: {
-//     type: mongoose.Schema.Types.ObjectId,
 
 const Lyrics = mongoose.model('Lyrics', lyricSchema);
 

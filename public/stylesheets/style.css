@@ -91,6 +91,7 @@ button a {
 .topnav {
     overflow: hidden;
     background-color: #333;
+    top: 0;
   }
   
   .topnav a {
@@ -111,3 +112,26 @@ button a {
     background-color: #04AA6D;
     color: white;
   }
+
+  .signinbox {
+    border: 2.5px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: yellow;
+    box-shadow: 5px 2px 2px black;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    left: 55%;
+}
+
+.signinimage{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: auto;
+    left: auto;
+    max-width: 100%;
+}
